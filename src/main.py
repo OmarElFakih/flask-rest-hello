@@ -6,9 +6,14 @@ from flask import Flask, request, jsonify, url_for
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+
 from utils import APIException, generate_sitemap
 from models import db
 #from models import Person
+
+load_dotenv()
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
